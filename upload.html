@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Upload Manga</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Upload Manga</h1>
+</header>
+<a href="index.html" class="back-btn">
+    ← Back Home
+</a>
+
+<div class="upload-page">
+
+  <input type="text" placeholder="Manga Title">
+
+  <input type="text" placeholder="Genre">
+
+  <textarea placeholder="Description"></textarea>
+
+  <label class="file-upload">
+
+  <input type="file" hidden>
+
+  📁 Choose Cover Image
+
+</label>
+
+ <button onclick="uploadManga()">Upload</button>
+
+<p id="upload-message"></p>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

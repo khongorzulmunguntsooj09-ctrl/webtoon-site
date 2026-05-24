@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reader</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Chapter 2</h1>
+</header>
+<a href="index.html" class="back-btn">
+  ← Home
+</a>
+<div class="views">
+  👀 <span id="view-count">0</span> Views
+</div>
+
+<div class="reader">
+
+  <img src="images/1.jpg" alt="">
+<img src="images/2.jpg" alt="">
+<img src="images/3.jpg" alt="">
+
+</div>
+
+<div class="reader-buttons">
+  <a href="chapters.html">← Chapter List</a>
+  <a href="reader.html">← Previous Chapter</a>
+</div>
+<div class="like-section">
+
+  <button onclick="likeChapter()" id="like-btn">
+    ❤️ Like
+  </button>
+
+  <p id="like-count">0 Likes</p>
+
+</div>
+<div class="comments">
+
+  <h2>Comments</h2>
+
+  <input type="text" id="comment-input" placeholder="Write a comment...">
+
+  <button onclick="addComment()">Post</button>
+
+  <div id="comment-list"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
