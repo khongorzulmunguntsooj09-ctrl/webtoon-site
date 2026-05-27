@@ -115,3 +115,67 @@ function uploadManga(){
   document.getElementById("upload-message").innerText =
     "✅ Upload complete!";
 }
+import {
+  collection,
+  addDoc
+} from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
+
+async function uploadManga(){
+
+  const title =
+  document.querySelector('input[placeholder="Manga Title"]').value;
+
+  const genre =
+  document.querySelector('input[placeholder="Genre"]').value;
+
+  const description =
+  document.querySelector('textarea').value;
+
+  try{
+
+    await addDoc(
+      collection(window.db, "manga"),
+      {
+        title: title,
+        genre: genre,
+        description: description,
+        createdAt: new Date()
+      }
+    );
+
+    document.getElementById(
+      "upload-message"
+    ).innerText =
+    "✅ Uploaded successfully!";
+
+  }catch(error){
+
+    console.log(error);
+
+    document.getElementById(
+      "upload-message"
+    ).innerText =
+    "❌ Upload failed";
+
+  }
+}
+import { getFirestore, collection, addDoc } 
+from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+const db = getFirestore(app);
+
+window.uploadStory = async function () {
+  const title = document.querySelectorAll("input")[0].value;
+  const genre = document.querySelectorAll("input")[1].value;
+  const story = document.querySelector("textarea").value;
+
+  await addDoc(collection(db, "stories"), {
+    title: title,
+    genre: genre,
+    story: story,
+    createdAt: new Date()
+  });
+
+  document.getElementById("upload-message").innerText =
+    "✅ Story uploaded!";
+}
